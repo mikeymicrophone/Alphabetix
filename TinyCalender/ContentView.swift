@@ -8,37 +8,58 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var xelaDateManager:XelaDateManager = XelaDateManager(
+        calendar: Calendar.current,
+        minimumDate: Date().addingTimeInterval(60*60*24*(-365)),
+        maximumDate: Date().addingTimeInterval(60*60*24*365),
+//        disabledDates: [Date().addingTimeInterval(60*60*24*(-3)), Date().addingTimeInterval(60*60*24*(10)), Date().addingTimeInterval(60*60*24*(-2))],
+        //selectedDate: Date().addingTimeInterval(60*60*24*3),
+        selectedDate: Date.now,
+        mode: 0,
+        colors: XelaColorSettings(),
+        cellWidth: 50
+    )
+    
     var body: some View {
-        ZStack{
-            Color.brown.ignoresSafeArea()
-            VStack {
-                Image(uiImage: #imageLiteral(resourceName: "calendar.png"))
-                    .resizable()
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .padding(.top, 10)
-                    .foregroundColor(.accentColor)
-                VStack{
-                    Text("Today’s letter")
-                        .font(.system(.title).bold())
+        NavigationView{
+        ZStack {
+            Color.white.ignoresSafeArea()
+            ScrollView(.vertical){
+                VStack {
+                    XelaDatePicker(xelaDateManager: xelaDateManager, monthOffset: 12)
+                        .padding(.top, 40)
+                }//.padding(.top, -200)
+                VStack {
+                    Image(uiImage: #imageLiteral(resourceName: "calendar.png"))
+                        .resizable()
+                        .frame(width: 100, height: 100, alignment: .center)
                         .padding(.top, 10)
-                    Text("\(todayWord())")
-                        .font(.system(.largeTitle).bold())
+                        .foregroundColor(.accentColor)
+                    VStack{
+                        Text("Today’s letter")
+                            .font(.system(.title).bold())
+                        Text("\(letterOfDay())")
+                            .font(.system(.largeTitle).bold())
+                    }
                 }
+                .padding(.top, -80)
             }
-            .padding(.top, 10)
+        }.navigationTitle("Apphabetix")
+                .navigationBarTitleDisplayMode(.automatic)
         }
     }
     
-    func todayWord() -> String {
-        let characters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    func letterOfDay() -> String {
+        let letterList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
         var totalDays = 0
         let currentMonth = Date.getCurrentMonth() == 1 ? 1 : Date.getCurrentMonth() - 1
         var previousDays = 0
         let currentDate =  Date.getCurrentDate()
         
-        for numbers in  1...currentMonth  {
-            let currr  = DateTime().getDaysInMonth(month: numbers, year: Date.getCurrentYear())
-            totalDays += currr ?? 0
+        for numbers in 1...currentMonth  {
+            let monthDays  = DateTime().getDaysInMonth(month: numbers, year: Date.getCurrentYear())
+            totalDays += monthDays ?? 0
         }
         
         if Date.getCurrentMonth() == 1 {
@@ -51,10 +72,10 @@ struct ContentView: View {
             previousDays = totalDays + currentDate + DateTime().prevYearDays()
         }
         
-        let ddd = previousDays/26
-        let kk = ddd * 26
-        let finalWord = previousDays-kk
-        return characters[finalWord-1]
+        let letterGroups = previousDays/26
+        let totalFinalDays = letterGroups * 26
+        let finalLetter = previousDays-totalFinalDays
+        return letterList[finalLetter-1]
     }
 }
 

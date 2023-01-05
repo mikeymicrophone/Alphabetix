@@ -49,4 +49,37 @@ public class DateTime: NSObject {
         return totalDays
     }
     
+    func letterOfDays(_ date: Int) -> String {
+        let letterList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        var totalDays = 0
+        let currentMonth = Date.getCurrentMonth() == 1 ? 1 : Date.getCurrentMonth() - 1
+        var previousDays = 0
+        let currentDate =  date  //Date.getCurrentDate()
+        
+        for numbers in 1...currentMonth  {
+            let monthDays  = DateTime().getDaysInMonth(month: numbers, year: Date.getCurrentYear())
+            totalDays += monthDays ?? 0
+        }
+        
+        if Date.getCurrentMonth() == 1 {
+            if currentDate < 26 {
+                previousDays = currentDate + DateTime().prevYearDays()
+            } else {
+                previousDays = (currentDate - 26) + DateTime().prevYearDays()
+            }
+        } else {
+            previousDays = totalDays + currentDate + DateTime().prevYearDays()
+        }
+        
+        let letterGroups = previousDays/26
+        let totalFinalDays = letterGroups * 26
+        let finalLetter = previousDays-totalFinalDays
+        
+        if finalLetter-1 <= -1 {
+            return letterList.last ?? ""
+        }
+          
+        return letterList[finalLetter-1]
+    }
+    
 }

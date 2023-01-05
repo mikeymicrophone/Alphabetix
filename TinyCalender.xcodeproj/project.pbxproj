@@ -13,6 +13,20 @@
 		375FB2832962BB0F009F10AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375FB2822962BB0F009F10AC /* Preview Assets.xcassets */; };
 		375FB28B29630349009F10AC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375FB28A29630349009F10AC /* DateExtension.swift */; };
 		375FB28E296303DC009F10AC /* DateTimeClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375FB28D296303DC009F10AC /* DateTimeClasses.swift */; };
+		37D848422966BE71000D692C /* TextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848412966BE71000D692C /* TextExtensions.swift */; };
+		37D848482966BEF4000D692C /* XelaWeekdayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848432966BEF2000D692C /* XelaWeekdayHeader.swift */; };
+		37D848492966BEF4000D692C /* XelaDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848442966BEF3000D692C /* XelaDate.swift */; };
+		37D8484A2966BEF4000D692C /* XelaDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848452966BEF3000D692C /* XelaDatePickerCell.swift */; };
+		37D8484B2966BEF4000D692C /* XelaDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848462966BEF3000D692C /* XelaDatePicker.swift */; };
+		37D8484C2966BEF4000D692C /* XelaMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848472966BEF4000D692C /* XelaMonth.swift */; };
+		37D8484F2966C150000D692C /* XelaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8484E2966C14F000D692C /* XelaColor.swift */; };
+		37D848512966C213000D692C /* XelaDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848502966C213000D692C /* XelaDivider.swift */; };
+		37D848542966C28A000D692C /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848532966C28A000D692C /* ColorExtensions.swift */; };
+		37D848562966C2D5000D692C /* XelaColorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848552966C2D5000D692C /* XelaColorSettings.swift */; };
+		37D848582966C325000D692C /* XelaDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848572966C325000D692C /* XelaDateManager.swift */; };
+		37D8485A2966D313000D692C /* XelaColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848592966D313000D692C /* XelaColorModel.swift */; };
+		37D8485E2966D3E7000D692C /* XelaDividerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8485C2966D3E7000D692C /* XelaDividerStyle.swift */; };
+		37D8485F2966D3E7000D692C /* XelaDividerOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8485D2966D3E7000D692C /* XelaDividerOrientation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +37,20 @@
 		375FB2822962BB0F009F10AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		375FB28A29630349009F10AC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		375FB28D296303DC009F10AC /* DateTimeClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeClasses.swift; sourceTree = "<group>"; };
+		37D848412966BE71000D692C /* TextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensions.swift; sourceTree = "<group>"; };
+		37D848432966BEF2000D692C /* XelaWeekdayHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaWeekdayHeader.swift; sourceTree = "<group>"; };
+		37D848442966BEF3000D692C /* XelaDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaDate.swift; sourceTree = "<group>"; };
+		37D848452966BEF3000D692C /* XelaDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaDatePickerCell.swift; sourceTree = "<group>"; };
+		37D848462966BEF3000D692C /* XelaDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaDatePicker.swift; sourceTree = "<group>"; };
+		37D848472966BEF4000D692C /* XelaMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaMonth.swift; sourceTree = "<group>"; };
+		37D8484E2966C14F000D692C /* XelaColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaColor.swift; sourceTree = "<group>"; };
+		37D848502966C213000D692C /* XelaDivider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaDivider.swift; sourceTree = "<group>"; };
+		37D848532966C28A000D692C /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		37D848552966C2D5000D692C /* XelaColorSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaColorSettings.swift; sourceTree = "<group>"; };
+		37D848572966C325000D692C /* XelaDateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaDateManager.swift; sourceTree = "<group>"; };
+		37D848592966D313000D692C /* XelaColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaColorModel.swift; sourceTree = "<group>"; };
+		37D8485C2966D3E7000D692C /* XelaDividerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaDividerStyle.swift; sourceTree = "<group>"; };
+		37D8485D2966D3E7000D692C /* XelaDividerOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaDividerOrientation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +83,7 @@
 		375FB27A2962BB0C009F10AC /* TinyCalender */ = {
 			isa = PBXGroup;
 			children = (
+				37D8483F2966BE01000D692C /* XelaUIKit */,
 				375FB28C296303BD009F10AC /* classes */,
 				375FB28929630333009F10AC /* Extensions */,
 				375FB27B2962BB0C009F10AC /* TinyCalenderApp.swift */,
@@ -87,6 +116,51 @@
 				375FB28D296303DC009F10AC /* DateTimeClasses.swift */,
 			);
 			path = classes;
+			sourceTree = "<group>";
+		};
+		37D8483F2966BE01000D692C /* XelaUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				37D848572966C325000D692C /* XelaDateManager.swift */,
+				37D848552966C2D5000D692C /* XelaColorSettings.swift */,
+				37D848502966C213000D692C /* XelaDivider.swift */,
+				37D8484E2966C14F000D692C /* XelaColor.swift */,
+				37D8484D2966C11D000D692C /* Models */,
+				37D848442966BEF3000D692C /* XelaDate.swift */,
+				37D848462966BEF3000D692C /* XelaDatePicker.swift */,
+				37D848452966BEF3000D692C /* XelaDatePickerCell.swift */,
+				37D848472966BEF4000D692C /* XelaMonth.swift */,
+				37D848432966BEF2000D692C /* XelaWeekdayHeader.swift */,
+				37D848402966BE54000D692C /* Extensions */,
+			);
+			path = XelaUIKit;
+			sourceTree = "<group>";
+		};
+		37D848402966BE54000D692C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				37D848532966C28A000D692C /* ColorExtensions.swift */,
+				37D848412966BE71000D692C /* TextExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		37D8484D2966C11D000D692C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37D8485B2966D3CF000D692C /* Divider */,
+				37D848592966D313000D692C /* XelaColorModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		37D8485B2966D3CF000D692C /* Divider */ = {
+			isa = PBXGroup;
+			children = (
+				37D8485D2966D3E7000D692C /* XelaDividerOrientation.swift */,
+				37D8485C2966D3E7000D692C /* XelaDividerStyle.swift */,
+			);
+			path = Divider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,10 +234,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D848492966BEF4000D692C /* XelaDate.swift in Sources */,
+				37D848582966C325000D692C /* XelaDateManager.swift in Sources */,
+				37D848542966C28A000D692C /* ColorExtensions.swift in Sources */,
+				37D8484A2966BEF4000D692C /* XelaDatePickerCell.swift in Sources */,
 				375FB28E296303DC009F10AC /* DateTimeClasses.swift in Sources */,
 				375FB27E2962BB0C009F10AC /* ContentView.swift in Sources */,
 				375FB28B29630349009F10AC /* DateExtension.swift in Sources */,
+				37D848512966C213000D692C /* XelaDivider.swift in Sources */,
+				37D8485F2966D3E7000D692C /* XelaDividerOrientation.swift in Sources */,
 				375FB27C2962BB0C009F10AC /* TinyCalenderApp.swift in Sources */,
+				37D8485A2966D313000D692C /* XelaColorModel.swift in Sources */,
+				37D848562966C2D5000D692C /* XelaColorSettings.swift in Sources */,
+				37D8484C2966BEF4000D692C /* XelaMonth.swift in Sources */,
+				37D848422966BE71000D692C /* TextExtensions.swift in Sources */,
+				37D8485E2966D3E7000D692C /* XelaDividerStyle.swift in Sources */,
+				37D8484F2966C150000D692C /* XelaColor.swift in Sources */,
+				37D848482966BEF4000D692C /* XelaWeekdayHeader.swift in Sources */,
+				37D8484B2966BEF4000D692C /* XelaDatePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
