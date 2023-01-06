@@ -13,7 +13,7 @@ struct XelaMonth: View {
     // @Binding var isPresented: Bool
 
     @ObservedObject var xelaManager: XelaDateManager
-
+    @State private var state: XelaButtonState = .Hover
     @State var monthOffset: Int
 
     let calendarUnitYMD = Set<Calendar.Component>([.year, .month, .day])
@@ -31,14 +31,13 @@ struct XelaMonth: View {
                     .xelaHeadline()
                     .foregroundColor(self.xelaManager.colors.yearHeaderColor)
 
-                Text(getMonthHeader())
+                Text(getMonthHeader(false))
                     .xelaHeadline()
                     .foregroundColor(self.xelaManager.colors.monthHeaderColor)
 
                 Spacer()
-//
-//                XelaButton(action: { withAnimation { monthOffset -= 1 }}, size: .Small, type: .Secondary, background: xelaManager.colors.changeMonthButtonBackground, foregroundColor: xelaManager.colors.changeMonthButtonForeground, systemIcon: "chevron.left")
-//                XelaButton(action: { withAnimation { monthOffset += 1 }}, size: .Small, type: .Secondary, background: xelaManager.colors.changeMonthButtonBackground, foregroundColor: xelaManager.colors.changeMonthButtonForeground, systemIcon: "chevron.right")
+                XelaButton(action: { withAnimation { monthOffset -= 1 }}, size: .Small, state: $state , type: .Secondary, background: xelaManager.colors.changeMonthButtonBackground, foregroundColor: xelaManager.colors.changeMonthButtonForeground , systemIcon: "chevron.left")
+                XelaButton(action: { withAnimation { monthOffset += 1 }}, size: .Small, state: $state, type: .Secondary, background: xelaManager.colors.changeMonthButtonBackground, foregroundColor: xelaManager.colors.changeMonthButtonForeground , systemIcon: "chevron.right")
             }
             .frame(width: xelaManager.cellWidth * CGFloat(daysPerWeek))
 
@@ -60,7 +59,9 @@ struct XelaMonth: View {
                                         isDisabled: !self.isEnabled(date: column),
                                         isToday: self.isToday(date: column),
                                         isSelected: self.isSpecialDate(date: column),
-                                        isBetweenStartAndEnd: self.isBetweenStartAndEnd(date: column)
+                                        isBetweenStartAndEnd: self.isBetweenStartAndEnd(date: column),
+                                        year: self.getYearHeader(),
+                                        month: getMonthHeader(true)
                                     ),
                                     cellWidth: xelaManager.cellWidth)
                                         .onTapGesture { self.dateTapped(date: column) }
@@ -151,10 +152,11 @@ struct XelaMonth: View {
         return headerDateFormatter.string(from: firstOfMonthForOffset())
     }
 
-    func getMonthHeader() -> String {
+    func getMonthHeader(_ inNumFormat:Bool) -> String {
         let headerDateFormatter = DateFormatter()
         headerDateFormatter.calendar = xelaManager.calendar
-        headerDateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "LLLL", options: 0, locale: xelaManager.calendar.locale)
+        
+        headerDateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: inNumFormat == true ? "MM" : "LLLL" , options: 0, locale: xelaManager.calendar.locale)
 
         return headerDateFormatter.string(from: firstOfMonthForOffset())
     }

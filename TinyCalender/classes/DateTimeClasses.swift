@@ -38,8 +38,8 @@ public class DateTime: NSObject {
         }
     }
     
-    func prevYearDays() -> Int {
-        let currentYear = Date.getCurrentYear()
+    func prevYearDays(_ year: Int) -> Int {
+        let currentYear = year
         var totalDays = 0
         let startYear = 2020
         let subyear = (currentYear) - startYear
@@ -49,26 +49,30 @@ public class DateTime: NSObject {
         return totalDays
     }
     
-    func letterOfDays(_ date: Int) -> String {
+    //MARK: - Get monthly letters
+    func lettersOfTheDays(date: Int, month: Int, year: Int) -> String {
         let letterList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
         var totalDays = 0
-        let currentMonth = Date.getCurrentMonth() == 1 ? 1 : Date.getCurrentMonth() - 1
+        let currentMonth = month == 1 ? 1 : month - 1
         var previousDays = 0
-        let currentDate =  date  //Date.getCurrentDate()
+        let currentDate = date
+        if year == 2020 {
+            return ""
+        }
         
         for numbers in 1...currentMonth  {
-            let monthDays  = DateTime().getDaysInMonth(month: numbers, year: Date.getCurrentYear())
+            let monthDays  = DateTime().getDaysInMonth(month: numbers, year: year)
             totalDays += monthDays ?? 0
         }
         
-        if Date.getCurrentMonth() == 1 {
+        if month == 1 {
             if currentDate < 26 {
-                previousDays = currentDate + DateTime().prevYearDays()
+                previousDays = currentDate + DateTime().prevYearDays(year)
             } else {
-                previousDays = (currentDate - 26) + DateTime().prevYearDays()
+                previousDays = (currentDate - 26) + DateTime().prevYearDays(year)
             }
         } else {
-            previousDays = totalDays + currentDate + DateTime().prevYearDays()
+            previousDays = totalDays + currentDate + DateTime().prevYearDays(year)
         }
         
         let letterGroups = previousDays/26
@@ -79,6 +83,35 @@ public class DateTime: NSObject {
             return letterList.last ?? ""
         }
           
+        return letterList[finalLetter-1]
+    }
+    
+    //MARK: - Get current day letter
+    func letterOfDay() -> String {
+        let letterList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+        var totalDays = 0
+        let currentMonth = Date.getCurrentMonth() == 1 ? 1 : Date.getCurrentMonth() - 1
+        var previousDays = 0
+        let currentDate = Date.getCurrentDate()
+        
+        for numbers in 1...currentMonth  {
+            let monthDays  = DateTime().getDaysInMonth(month: numbers, year: Date.getCurrentYear())
+            totalDays += monthDays ?? 0
+        }
+        
+        if Date.getCurrentMonth() == 1 {
+            if currentDate < 26 {
+                previousDays = currentDate + DateTime().prevYearDays(Date.getCurrentYear())
+            } else {
+                previousDays = (currentDate - 26) + DateTime().prevYearDays(Date.getCurrentYear())
+            }
+        } else {
+            previousDays = totalDays + currentDate + DateTime().prevYearDays(Date.getCurrentYear())
+        }
+        
+        let letterGroups = previousDays/26
+        let totalFinalDays = letterGroups * 26
+        let finalLetter = previousDays-totalFinalDays
         return letterList[finalLetter-1]
     }
     
