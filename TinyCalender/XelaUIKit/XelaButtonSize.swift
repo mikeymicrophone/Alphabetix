@@ -1,5 +1,5 @@
 //
-//  XelaDividerOrientation.swift
+//  ButtonSize.swift
 //  XelaExampleApp
 //
 //  Created by Zero IT Solutions on 02/01/23.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-enum XelaDividerOrientation {
-    case Horizontal
-    case Vertical
+enum XelaButtonSize: String {
+    case Large
+    case Medium
+    case Small
 }

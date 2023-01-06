@@ -10,20 +10,28 @@
 import SwiftUI
 
 struct XelaDate {
+    
     var date: Date
-
     var xelaManager: XelaDateManager
-
     var isDisabled: Bool = false
     var isToday: Bool = false
     var isSelected: Bool = false
     var isBetweenStartAndEnd: Bool = false
-
+    var year:String = ""
+    var month:String = ""
     func getText() -> String {
         let day = formatDate(date: date, calendar: xelaManager.calendar)
         return day
     }
+    
+    func getMonth() -> Int {
+        return Int(month) ?? 0
+    }
 
+    func getYear() -> Int {
+        return Int(year) ?? 0
+    }
+    
     func getTextColor() -> Color {
         var textColor = xelaManager.colors.textColor
         if isDisabled {

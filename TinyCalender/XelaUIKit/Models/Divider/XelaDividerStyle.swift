@@ -2,7 +2,8 @@
 //  XelaDividerStyle.swift
 //  XelaExampleApp
 //
-//  Created by Sherhan on 07.08.2021.
+//  Created by Zero IT Solutions on 02/01/23.
+//  Copyright © 2023 Zero It Solutions. All rights reserved.
 //
 
 import Foundation
