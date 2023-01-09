@@ -47,12 +47,13 @@ struct ContentView: View {
                 }
             }.navigationTitle("Alphabetix Magicalendar")
                 .navigationBarTitleDisplayMode(.inline)
-                .onAppear(perform: {
-                    print(Calendar.current)
-                })
+                .onAppear {
+                    UIApplication.shared.applicationIconBadgeNumber = 0
+                    //UserDefaults.standard.set(0, forKey: "NotificationBadgeCount")
+                    NotificationManager.instance.requestAuthorization()
+                }
         }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
