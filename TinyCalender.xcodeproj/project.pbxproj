@@ -18,6 +18,7 @@
 		3769DCA92967EF3C006143F2 /* XelaButtonSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3769DCA62967EF3C006143F2 /* XelaButtonSize.swift */; };
 		3769DCAA2967EF3C006143F2 /* XelaButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3769DCA72967EF3C006143F2 /* XelaButtonType.swift */; };
 		3769DCAC2967EFCE006143F2 /* Colors-Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3769DCAB2967EFCE006143F2 /* Colors-Constants.swift */; };
+		37BC1438296BDF23009997F6 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BC1437296BDF23009997F6 /* Notification.swift */; };
 		37D848422966BE71000D692C /* TextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848412966BE71000D692C /* TextExtensions.swift */; };
 		37D848482966BEF4000D692C /* XelaWeekdayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848432966BEF2000D692C /* XelaWeekdayHeader.swift */; };
 		37D848492966BEF4000D692C /* XelaDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848442966BEF3000D692C /* XelaDate.swift */; };
@@ -47,6 +48,7 @@
 		3769DCA62967EF3C006143F2 /* XelaButtonSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaButtonSize.swift; sourceTree = "<group>"; };
 		3769DCA72967EF3C006143F2 /* XelaButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaButtonType.swift; sourceTree = "<group>"; };
 		3769DCAB2967EFCE006143F2 /* Colors-Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors-Constants.swift"; sourceTree = "<group>"; };
+		37BC1437296BDF23009997F6 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		37D848412966BE71000D692C /* TextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensions.swift; sourceTree = "<group>"; };
 		37D848432966BEF2000D692C /* XelaWeekdayHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaWeekdayHeader.swift; sourceTree = "<group>"; };
 		37D848442966BEF3000D692C /* XelaDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaDate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				375FB28D296303DC009F10AC /* DateTimeClasses.swift */,
+				37BC1437296BDF23009997F6 /* Notification.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				3769DCA82967EF3C006143F2 /* XelaButtonState.swift in Sources */,
 				37D8484F2966C150000D692C /* XelaColor.swift in Sources */,
 				3769DCA42967EEBB006143F2 /* XelaButton.swift in Sources */,
+				37BC1438296BDF23009997F6 /* Notification.swift in Sources */,
 				37D848482966BEF4000D692C /* XelaWeekdayHeader.swift in Sources */,
 				3769DCAC2967EFCE006143F2 /* Colors-Constants.swift in Sources */,
 				37D8484B2966BEF4000D692C /* XelaDatePicker.swift in Sources */,
