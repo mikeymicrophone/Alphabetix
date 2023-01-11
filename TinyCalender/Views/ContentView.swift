@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var showPicker = false
+    @State var selectedLetter = LetterModel(format: "Power Letter", letter: "+")
     @StateObject var xelaDateManager:XelaDateManager = XelaDateManager(
         calendar: Calendar.current,
         minimumDate: Date().addingTimeInterval(60*60*24*(-370)),
         maximumDate: Date().addingTimeInterval(60*60*24*1460),
-//        disabledDates: [Date().addingTimeInterval(60*60*24*(-3)), Date().addingTimeInterval(60*60*24*(10)), Date().addingTimeInterval(60*60*24*(-2))],
-        //selectedDate: Date().addingTimeInterval(60*60*24*3),
         selectedDate: Date.now,
         mode: 0,
         colors: XelaColorSettings(),
@@ -22,7 +22,7 @@ struct ContentView: View {
     )
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             ZStack {
                 Color.white.ignoresSafeArea()
                 ScrollView(.vertical){
@@ -30,6 +30,31 @@ struct ContentView: View {
                         XelaDatePicker(xelaDateManager: xelaDateManager, monthOffset: 12)
                             .padding(.top, 40)
                     }
+                    Button(action: {
+                        if UserDefaults.standard.value(forKey: "powerLetter") == nil {
+                            self.showPicker.toggle()
+                            
+                        }
+                    }) {
+                        HStack {
+                            if UserDefaults.standard.value(forKey: "powerLetter") != nil {
+                                Text("My Power Letter is \(UserDefaults.standard.value(forKey: "powerLetter") as! String)")
+                                    .bold()
+                            } else {
+                                Text("\(selectedLetter.format) \(selectedLetter.letter)")
+                                    .bold()
+                            }
+                            
+                        }.padding(10.0)
+                            .sheet(isPresented: $showPicker) {
+                                letterPickerView(filter: $selectedLetter)
+                            }
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10.0)
+                                    .stroke(lineWidth: 2.0)
+                            )
+                    }.padding(.top, -50)
+                    
                     VStack {
                         Image(uiImage: #imageLiteral(resourceName: "calendar.png"))
                             .resizable()
@@ -42,8 +67,7 @@ struct ContentView: View {
                             Text("\(DateTime().letterOfDay())")
                                 .font(.system(.largeTitle).bold())
                         }
-                    }
-                    .padding(.top, -70)
+                    }.padding(.top)
                 }
             }.navigationTitle("Alphabetix Magicalendar")
                 .navigationBarTitleDisplayMode(.inline)
