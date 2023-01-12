@@ -33,7 +33,6 @@ struct ContentView: View {
                     Button(action: {
                         if UserDefaults.standard.value(forKey: "powerLetter") == nil {
                             self.showPicker.toggle()
-                            
                         }
                     }) {
                         HStack {
@@ -53,21 +52,15 @@ struct ContentView: View {
                                 RoundedRectangle(cornerRadius: 10.0)
                                     .stroke(lineWidth: 2.0)
                             )
-                    }.padding(.top, -50)
+                    }.padding(.top, 20)
                     
                     VStack {
-                        Image(uiImage: #imageLiteral(resourceName: "calendar.png"))
-                            .resizable()
-                            .frame(width: 100, height: 100, alignment: .center)
-                            .padding(.top, 10)
-                            .foregroundColor(.accentColor)
-                        VStack{
-                            Text("Today’s letter")
+                       
+                            Text("Today is Day")
                                 .font(.system(.title).bold())
                             Text("\(DateTime().letterOfDay())")
                                 .font(.system(.largeTitle).bold())
-                        }
-                    }.padding(.top)
+                    }.padding(.top, 10)
                 }
             }.navigationTitle("Alphabetix Magicalendar")
                 .navigationBarTitleDisplayMode(.inline)

@@ -30,4 +30,11 @@ extension Date {
         let currentMonth = dateFormatter.string(from: Date())
         return Int(currentMonth) ?? 0
     }
+    
+    static func getCurrentTime() -> Int {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH"
+        let currentMonth = dateFormatter.string(from: Date())
+        return Int(currentMonth) ?? 0
+    }    
 }
