@@ -53,6 +53,7 @@ struct XelaDatePickerCell: View {
                     .padding(.trailing,0.8)
                 VStack {
                     Text(xelaDate.getText())
+                        .foregroundColor(Color.gray)
                         .font(.footnote)
                         .padding(.leading, 28)
                         .padding(.top,1)
@@ -68,7 +69,7 @@ struct XelaDatePickerCell: View {
                         .opacity(xelaDate.isToday && !xelaDate.isSelected ? 1 : 0)                                     )
                 
                 Text(DateTime().lettersOfTheDays(date: Int(xelaDate.getText())!, month: (xelaDate.getMonth()), year: (xelaDate.getYear())))
-                    .xelaButtonLarge()
+                    .font(.system(.title).smallCaps())
                     .foregroundColor(xelaDate.getTextColor())
                     .padding()
             }

@@ -112,7 +112,14 @@ public class DateTime: NSObject {
         let letterGroups = previousDays/26
         let totalFinalDays = letterGroups * 26
         let finalLetter = previousDays-totalFinalDays
-        return letterList[finalLetter-1]
+        if Date.getCurrentTime() >= 0 && Date.getCurrentTime() <= 5 {
+            if finalLetter - 1 == -1 {
+                return letterList[25] + letterList[finalLetter]
+            } else {
+                return letterList[finalLetter-1] + letterList[finalLetter]
+            }
+        }
+        return letterList[finalLetter - 1 == -1 ? 25 : finalLetter - 1]
     }
     
 }

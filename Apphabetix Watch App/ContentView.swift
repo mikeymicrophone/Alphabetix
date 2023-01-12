@@ -19,7 +19,7 @@ struct ContentView: View {
                     .padding(.top, 10)
                     .foregroundColor(.accentColor)
                 VStack{
-                    Text("Today’s letter")
+                    Text("Today is Day")
                         .font(.system(.title3))
                         .padding(.top, 10)
                         .foregroundColor(.black)
