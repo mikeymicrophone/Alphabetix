@@ -19,12 +19,9 @@ struct ContentView: View {
                     .padding(.top, 10)
                     .foregroundColor(.accentColor)
                 VStack{
-                    Text("Today is Day")
+                    Text("Today is Day \(DateTime().letterOfDay())")
                         .font(.system(.title3))
                         .padding(.top, 10)
-                        .foregroundColor(.black)
-                    Text("\(DateTime().letterOfDay())")
-                        .font(.system(.largeTitle).bold())
                         .foregroundColor(.black)
                 }
             }

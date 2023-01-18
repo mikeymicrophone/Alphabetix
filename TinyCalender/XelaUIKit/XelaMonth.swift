@@ -22,9 +22,9 @@ struct XelaMonth: View {
     @State private var totalOffsets: Int = 0
     @State private var prevMonth: Int = 0
     @State private var prevYear: Int = 0
-    @State private var currentYearOffsets: Int = 0
     @State private var yearClicked: Bool = false
     @State private var monthClicked: Bool = false
+    
     let calendarUnitYMD = Set<Calendar.Component>([.year, .month, .day])
     let daysPerWeek = 7
 //  let cellWidth = CGFloat(40)
@@ -120,6 +120,28 @@ struct XelaMonth: View {
             
         } else {
             VStack(alignment: HorizontalAlignment.center, spacing: 0) {
+                if monthOffset != ((12 * (Date.getCurrentYear() - 2020)) + Date.getCurrentMonth() - 1) {
+                    VStack {
+                        Button(action: {
+                            monthOffset = ((12 * (Date.getCurrentYear() - 2020)) + Date.getCurrentMonth() - 1)
+                            prevYear = Date.getCurrentYear()
+                        }) {
+                            HStack {
+                                Text("Currrent month")
+                                    .bold()
+                            }.padding(10.0)
+                                .sheet(isPresented: $showPicker) {
+                                    letterPickerView(filter: $selectedLetter)
+                                }
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10.0)
+                                        .stroke(lineWidth: 2.0)
+                                )
+                        }
+                    }.padding(.top, -40)
+                        .padding(.bottom, 10)
+                }
+                
                 HStack {
                     Button (action: {
                         yearClicked.toggle()
@@ -227,16 +249,13 @@ struct XelaMonth: View {
             }.padding(.top, -35)
             
             VStack {
-                Text("Today is Day")
+                Text("Today is Day \(DateTime().letterOfDay())")
                     .font(.system(.title).bold())
-                Text("\(DateTime().letterOfDay())")
-                    .font(.system(.largeTitle).bold())
             }.padding(.top, -20)
-             .onAppear(perform: {
+                .onAppear(perform: {
                     if totalOffsets == 0 {
                         totalOffsets = monthOffset
-                        currentYearOffsets = monthOffset
-                       selectedYear = getYearHeader()
+                        selectedYear = getYearHeader()
                         prevYear = Int(getYearHeader()) ?? 0
                     }
                 })
@@ -245,8 +264,8 @@ struct XelaMonth: View {
         
     func getnumberOfMonths(year: String){
         if Int(year) == Date.getCurrentYear() {
-            prevYear = Date.getCurrentYear()
-            monthOffset = currentYearOffsets
+            monthOffset = ((12 * (Date.getCurrentYear() - 2020)) + Date.getCurrentMonth() - 1)
+            prevYear = Int(year) ?? 0
         } else if (Int(year) ?? 0) > Date.getCurrentYear() {
             
             let totalYears = (Int(year) ?? 0) - prevYear
