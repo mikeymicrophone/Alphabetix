@@ -27,7 +27,7 @@ struct ContentView: View {
                 Color.white.ignoresSafeArea()
                 ScrollView(.vertical){
                     VStack {
-                        XelaDatePicker(xelaDateManager: xelaDateManager, monthOffset: 36)
+                        XelaDatePicker(xelaDateManager: xelaDateManager, monthOffset: ((12 * (Date.getCurrentYear() - 2020)) + Date.getCurrentMonth() - 1 ))
                             .padding(.top, 40)
                     }
                 }

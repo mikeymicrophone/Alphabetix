@@ -43,8 +43,10 @@ public class DateTime: NSObject {
         var totalDays = 0
         let startYear = 2020
         let subyear = (currentYear) - startYear
-        for year in 0...subyear - 1 {
-            totalDays += totalDaysInYear(year: startYear+year)
+        if subyear > 0 {
+            for year in 0...subyear - 1 {
+                totalDays += totalDaysInYear(year: startYear+year)
+            }
         }
         return totalDays
     }
@@ -56,7 +58,7 @@ public class DateTime: NSObject {
         let currentMonth = month == 1 ? 1 : month - 1
         var previousDays = 0
         let currentDate = date
-        if year == 2020 {
+        if year == 2019 {
             return ""
         }
         
