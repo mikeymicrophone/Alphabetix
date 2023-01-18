@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37580CAE2976814F0072173C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37580CAD2976814F0072173C /* GlobalConstant.swift */; };
+		37580CAF2976814F0072173C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37580CAD2976814F0072173C /* GlobalConstant.swift */; };
 		375FB27C2962BB0C009F10AC /* TinyCalenderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375FB27B2962BB0C009F10AC /* TinyCalenderApp.swift */; };
 		375FB27E2962BB0C009F10AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375FB27D2962BB0C009F10AC /* ContentView.swift */; };
 		375FB2802962BB0F009F10AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375FB27F2962BB0F009F10AC /* Assets.xcassets */; };
@@ -43,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37580CAD2976814F0072173C /* GlobalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		375FB2782962BB0C009F10AC /* TinyCalender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyCalender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		375FB27B2962BB0C009F10AC /* TinyCalenderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyCalenderApp.swift; sourceTree = "<group>"; };
 		375FB27D2962BB0C009F10AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				375FB28A29630349009F10AC /* DateExtension.swift */,
+				37580CAD2976814F0072173C /* GlobalConstant.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -347,6 +351,7 @@
 				3769DCAA2967EF3C006143F2 /* XelaButtonType.swift in Sources */,
 				37D8484C2966BEF4000D692C /* XelaMonth.swift in Sources */,
 				37D848422966BE71000D692C /* TextExtensions.swift in Sources */,
+				37580CAE2976814F0072173C /* GlobalConstant.swift in Sources */,
 				37D8485E2966D3E7000D692C /* XelaDividerStyle.swift in Sources */,
 				3769DCA82967EF3C006143F2 /* XelaButtonState.swift in Sources */,
 				37D8484F2966C150000D692C /* XelaColor.swift in Sources */,
@@ -363,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37BC144E296C014B009997F6 /* DateTimeClasses.swift in Sources */,
+				37580CAF2976814F0072173C /* GlobalConstant.swift in Sources */,
 				37BC1450296C0198009997F6 /* DateExtension.swift in Sources */,
 				37BC1445296C00E9009997F6 /* ContentView.swift in Sources */,
 				37BC1443296C00E9009997F6 /* ApphabetixApp.swift in Sources */,
