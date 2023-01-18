@@ -36,5 +36,13 @@ extension Date {
         dateFormatter.dateFormat = "HH"
         let currentMonth = dateFormatter.string(from: Date())
         return Int(currentMonth) ?? 0
-    }    
+    }
+    
+    func getMinDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale.current
+        return dateFormatter.date(from: "2020-01-01 10:02:44 +0000") // replace Date String
+    }
 }
