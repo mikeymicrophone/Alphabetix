@@ -31,7 +31,7 @@ struct ContentView: View {
                             .padding(.top, 40)
                     }
                 }
-            }.navigationTitle("Alphabetix Magicalendar")
+            }.navigationTitle("AlphabetiX Magicalendar")
                 .navigationBarTitleDisplayMode(.inline)
                 .onAppear {
                     UIApplication.shared.applicationIconBadgeNumber = 0
@@ -39,6 +39,14 @@ struct ContentView: View {
                     NotificationManager.instance.requestAuthorization()
                 }
         }
+        .navigationViewStyle(StackNavigationViewStyle()) // Apply stack navigation view style
+
+        // Set the navigation bar title color for both light and dark mode
+        .onAppear {
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        }
+        .preferredColorScheme(.dark) // Set the preferred color scheme to dark mode
     }
 }
 

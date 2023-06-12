@@ -29,11 +29,11 @@ struct letterPickerView: View {
                     }) {
                         HStack {
                             Text("Dismiss")
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                                 .padding(.top, 15)
                                 .padding(.trailing, -6)
                             Image(systemName: "xmark")
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                                 .padding(.top, 15)
                         }
                            
@@ -46,17 +46,17 @@ struct letterPickerView: View {
                 Text("What is your Power Letter?")
                     .xelaHeadline()
                     .padding(.bottom, -10)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                 Picker("", selection: $selectedLetter) {
                     ForEach(letterList, id: \.self) {
                         Text($0)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                     }
                 }.pickerStyle(.inline)
                
                 Text("You selected \(selectedLetter)")
                     .bold()
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                 if selectedLetter != "-" {
                     Button(action: {
                         UserDefaults.standard.set(selectedLetter, forKey: "powerLetter")
@@ -67,7 +67,7 @@ struct letterPickerView: View {
                         HStack {
                             Text("Save Letter \(selectedLetter)")
                                 .bold()
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                         }.padding(10.0)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10.0)
