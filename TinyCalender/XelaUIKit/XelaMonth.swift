@@ -251,6 +251,8 @@ struct XelaMonth: View {
             VStack {
                 Text("Today is Day \(DateTime().letterOfDay())")
                     .font(.system(.title).bold())
+                    .foregroundColor(.black) 
+                    .colorScheme(.dark) //
             }.padding(.top, -20)
                 .onAppear(perform: {
                     if totalOffsets == 0 {
