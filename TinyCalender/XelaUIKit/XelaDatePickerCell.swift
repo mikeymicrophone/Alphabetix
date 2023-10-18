@@ -11,6 +11,7 @@ import SwiftUI
 
 struct XelaDatePickerCell: View {
     var xelaDate: XelaDate
+    @Binding var theeme_mode : Theem_mode
 
     var cellWidth: CGFloat = 40
 
@@ -79,6 +80,6 @@ struct XelaDatePickerCell: View {
 
 struct XelaDatePickerCell_Previews: PreviewProvider {
     static var previews: some View {
-        XelaDatePickerCell(xelaDate: XelaDate(date: Date(), xelaManager: XelaDateManager(calendar: Calendar.current, minimumDate: Date(), maximumDate: Date().addingTimeInterval(60 * 60 * 24 * 365), mode: 0)))
+        XelaDatePickerCell(xelaDate: XelaDate(theme_mode: .constant(.dark), date: Date(), xelaManager: XelaDateManager(calendar: Calendar.current, minimumDate: Date(), maximumDate: Date().addingTimeInterval(60 * 60 * 24 * 365), mode: 0)), theeme_mode: .constant(.dark))
     }
 }

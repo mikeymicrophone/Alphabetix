@@ -11,6 +11,7 @@ import SwiftUI
 struct XelaButton: View {
     // Button text String
     @State var text: String?
+    @Binding var theeme_mode : Theem_mode
 
     var action: (() -> Void)? = nil
 
@@ -28,7 +29,9 @@ struct XelaButton: View {
     @State var height: CGFloat? = nil
 
     @State var autoResize = true
-
+    var theemColor : Color{
+        return theeme_mode == .lite ? .black : .white
+    }
     var borderLineWidth: CGFloat = 1
     var removePaddings: Bool = false
 
@@ -96,7 +99,7 @@ struct XelaButton: View {
                 .padding(.leading, removePaddings ? 0 : rightIcon != nil && text != nil ? (size == .Large ? 20 : size == .Medium ? 12 : 4) : (size == .Large ? 20 : size == .Medium ? 12 : text != nil ? 12 : 4))
                 .padding(.vertical, removePaddings ? 0 : size == .Large ? 12 : size == .Medium ? 12 : 4)
             }
-            .foregroundColor(foregroundColor)
+            .foregroundColor(theemColor)
             .background(background)
             .cornerRadius(size == .Small ? 9 : 13)
             // .border(background.opacity(0.8), width: 4)
@@ -170,13 +173,13 @@ struct XelaButton: View {
                 .padding(.leading, removePaddings ? 0 : leftIcon != nil && text != nil ? (size == .Large ? 23 : size == .Medium ? 15 : 7) : (size == .Large ? 23 : size == .Medium ? 15 : text != nil ? 15 : 7))
                 .padding(.vertical, removePaddings ? 0 : size == .Large ? 15 : size == .Medium ? 15 : 7)
             }
-            .foregroundColor(foregroundColor)
+            .foregroundColor(theemColor)
             // .background(background)
             .cornerRadius(size == .Small ? 12 : 16)
             // .border(background.opacity(0.8), width: 4)
             .overlay(
                 RoundedRectangle(cornerRadius: size == .Small ? 12 : 16)
-                    .stroke(state == .Default ? defaultBorderColor : foregroundColor, lineWidth: state == .Focus ? 2 : borderLineWidth)
+                    .stroke(state == .Default ? defaultBorderColor : theemColor, lineWidth: state == .Focus ? 2 : borderLineWidth)
             )
             .opacity(state == .Disabled ? 0.4 : state == .Hover ? 0.8 : 1)
             .disabled(state == .Disabled ? true : false)

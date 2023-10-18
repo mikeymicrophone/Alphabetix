@@ -9,6 +9,26 @@
 import SwiftUI
 
 extension Color {
+    
+    
+    public static var app_pink_color: Color {
+        return  Color(UIColor(red: 1.0, green: 0.57, blue:0.69, alpha: 1.0))
+    }
+    
+    public static var app_white: Color {
+        return  Color(UIColor(red: 1.0, green: 1.0, blue:1.0, alpha: 1.0))
+    }
+    public static var app_Black: Color {
+        return  Color(UIColor(red: 0.0, green: 0.0, blue:0.0, alpha: 1.0))
+    }
+    public static var app_blue: Color {
+        return  Color.blue
+    }
+
+
+
+    
+    
     /**
      Modify the Color.
 

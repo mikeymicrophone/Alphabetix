@@ -42,6 +42,7 @@
 		37D8485A2966D313000D692C /* XelaColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D848592966D313000D692C /* XelaColorModel.swift */; };
 		37D8485E2966D3E7000D692C /* XelaDividerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8485C2966D3E7000D692C /* XelaDividerStyle.swift */; };
 		37D8485F2966D3E7000D692C /* XelaDividerOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8485D2966D3E7000D692C /* XelaDividerOrientation.swift */; };
+		B5664CE82ADFB86000CAE544 /* Userdefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5664CE72ADFB86000CAE544 /* Userdefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		37D848592966D313000D692C /* XelaColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaColorModel.swift; sourceTree = "<group>"; };
 		37D8485C2966D3E7000D692C /* XelaDividerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaDividerStyle.swift; sourceTree = "<group>"; };
 		37D8485D2966D3E7000D692C /* XelaDividerOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaDividerOrientation.swift; sourceTree = "<group>"; };
+		B5664CE72ADFB86000CAE544 /* Userdefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userdefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				375FB28D296303DC009F10AC /* DateTimeClasses.swift */,
 				37BC1437296BDF23009997F6 /* Notification.swift */,
+				B5664CE72ADFB86000CAE544 /* Userdefaults.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				375FB27C2962BB0C009F10AC /* TinyCalenderApp.swift in Sources */,
 				37D8485A2966D313000D692C /* XelaColorModel.swift in Sources */,
 				37D848562966C2D5000D692C /* XelaColorSettings.swift in Sources */,
+				B5664CE82ADFB86000CAE544 /* Userdefaults.swift in Sources */,
 				3769DCAA2967EF3C006143F2 /* XelaButtonType.swift in Sources */,
 				37D8484C2966BEF4000D692C /* XelaMonth.swift in Sources */,
 				37D848422966BE71000D692C /* TextExtensions.swift in Sources */,

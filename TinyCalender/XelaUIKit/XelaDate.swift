@@ -10,7 +10,7 @@
 import SwiftUI
 
 struct XelaDate {
-    
+    @Binding var theme_mode : Theem_mode
     var date: Date
     var xelaManager: XelaDateManager
     var isDisabled: Bool = false
@@ -35,14 +35,18 @@ struct XelaDate {
     func getTextColor() -> Color {
         var textColor = xelaManager.colors.textColor
         if isDisabled {
-            textColor = xelaManager.colors.disabledColor
+            textColor = theme_mode == .lite ?  .app_Black : .app_white
         } else if isSelected {
-            textColor = xelaManager.colors.selectedColor
+       //     textColor = xelaManager.colors.selectedColor
+            textColor = theme_mode == .lite ? .app_Black : .app_white
+
         } else if isToday {
-            textColor = xelaManager.colors.todayColor
+            textColor = theme_mode == .lite ? .app_Black : .app_white
         } else if isBetweenStartAndEnd {
-            textColor = xelaManager.colors.betweenStartAndEndColor
+            textColor = theme_mode == .lite ? .app_Black : .app_white
+           // textColor = xelaManager.colors.betweenStartAndEndColor
         }
+        textColor = theme_mode == .lite ? .app_Black : .app_white
         return textColor
     }
 
@@ -58,7 +62,8 @@ struct XelaDate {
             backgroundColor = xelaManager.colors.disabledBackgroundColor
         }
         if isSelected {
-            backgroundColor = xelaManager.colors.selectedBackgroundColor
+            backgroundColor = theme_mode == .lite ? xelaManager.colors.selectedBackgroundColor : .app_pink_color
+  
         }
         return backgroundColor
     }

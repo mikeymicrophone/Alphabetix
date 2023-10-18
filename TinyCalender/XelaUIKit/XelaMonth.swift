@@ -11,9 +11,10 @@ import SwiftUI
 import Foundation
 
 struct XelaMonth: View {
-   
+    
+    @Binding var theeme_mode : Theem_mode
     @State var showPicker = false
-    @State var selectedLetter = LetterModel(format: "Power Letter", letter: "+")
+    @State var selectedLetter = Letter().getLetter()
     @State private var selectedYear = ""
     @State private var selectedMonth = ""
     @ObservedObject var xelaManager: XelaDateManager
@@ -24,7 +25,18 @@ struct XelaMonth: View {
     @State private var prevYear: Int = 0
     @State private var yearClicked: Bool = false
     @State private var monthClicked: Bool = false
+    var themeColor : Color{
+        return theeme_mode == .dark ? .app_white : .app_Black
+    }
+    var backGround_color : Color{
+        return theeme_mode == .dark ? .app_Black : .app_white
+    }
     
+    var selected_color : Color{
+        return theeme_mode == .dark ? .app_pink_color : .app_blue
+    }
+
+
     let calendarUnitYMD = Set<Calendar.Component>([.year, .month, .day])
     let daysPerWeek = 7
 //  let cellWidth = CGFloat(40)
@@ -47,12 +59,12 @@ struct XelaMonth: View {
                     HStack {
                         Text("Apply \(selectedYear)")
                             .bold()
-                            .foregroundColor(.black)
+                            .foregroundColor(themeColor)
                     }.padding(10.0)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10.0)
                                 .stroke(lineWidth: 2.0)
-                        ).foregroundColor(.black)
+                        ).foregroundColor(themeColor)
                 })
                 
                 Button (action: {
@@ -62,12 +74,12 @@ struct XelaMonth: View {
                     HStack {
                         Text("Dismiss")
                             .bold()
-                            .foregroundColor(.black)
+                            .foregroundColor(themeColor)
                     }.padding(10.0)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10.0)
                                 .stroke(lineWidth: 2.0)
-                        ).foregroundColor(.black)
+                        ).foregroundColor(themeColor)
                 })
             }
             
@@ -94,12 +106,12 @@ struct XelaMonth: View {
                     HStack {
                         Text("Apply \(selectedMonth)")
                             .bold()
-                            .foregroundColor(.black)
+                            .foregroundColor(themeColor)
                     }.padding(10.0)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10.0)
                                 .stroke(lineWidth: 2.0)
-                        ).foregroundColor(.black)
+                        ).foregroundColor(themeColor)
                 })
                 
                 Button (action: {
@@ -109,15 +121,14 @@ struct XelaMonth: View {
                     HStack {
                         Text("Dismiss")
                             .bold()
-                            .foregroundColor(.black)
+                            .foregroundColor(themeColor)
                     }.padding(10.0)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10.0)
                                 .stroke(lineWidth: 2.0)
-                        ).foregroundColor(.black)
+                        ).foregroundColor(themeColor)
                 })
             }
-            
         } else {
             VStack(alignment: HorizontalAlignment.center, spacing: 0) {
                 if monthOffset != ((12 * (Date.getCurrentYear() - 2020)) + Date.getCurrentMonth() - 1) {
@@ -128,14 +139,17 @@ struct XelaMonth: View {
                         }) {
                             HStack {
                                 Text("Currrent month")
+                                    .foregroundColor(selected_color)
                                     .bold()
+                                    
                             }.padding(10.0)
                                 .sheet(isPresented: $showPicker) {
-                                    letterPickerView(filter: $selectedLetter)
+                                    letterPickerView(theeme_mode: $theeme_mode, filter: $selectedLetter)
                                 }
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10.0)
-                                        .stroke(lineWidth: 2.0)
+                                        .stroke(lineWidth: 2.0 )
+                                        .foregroundColor(selected_color)
                                 )
                         }
                     }.padding(.top, -40)
@@ -148,7 +162,9 @@ struct XelaMonth: View {
                     }, label: {
                         Text(getYearHeader())
                             .xelaHeadline()
-                            .foregroundColor(self.xelaManager.colors.yearHeaderColor)
+                            //.foregroundColor(self.xelaManager.colors.yearHeaderColor)
+                            .foregroundColor(themeColor)
+
                     })
                     
                     Button (action: {
@@ -158,24 +174,26 @@ struct XelaMonth: View {
                     }, label: {
                         Text(getMonthHeader(false))
                             .xelaHeadline()
-                            .foregroundColor(self.xelaManager.colors.monthHeaderColor)
+                           // .foregroundColor(self.xelaManager.colors.monthHeaderColor)
+                            .foregroundColor(themeColor.opacity(0.5))
+
                     })
                     Spacer()
-                    XelaButton(action: {
+                    XelaButton(theeme_mode: $theeme_mode, action: {
                         withAnimation { monthOffset -= 1 }
                         print(monthOffset)
                         selectedYear = getYearHeader()
                         totalOffsets = monthOffset
                         prevMonth = (Int(getMonthHeader(true)) ?? 0)
                         prevYear = Int(getYearHeader()) ?? 0
-                    }, size: .Small, state: $state , type: .Secondary, background: xelaManager.colors.changeMonthButtonBackground, foregroundColor: xelaManager.colors.changeMonthButtonForeground , systemIcon: "chevron.left")
-                    XelaButton(action: { withAnimation { monthOffset += 1 }
+                    }, size: .Small, state: $state , type: .Secondary, background: xelaManager.colors.changeMonthButtonBackground, foregroundColor: Color.red , systemIcon: "chevron.left")
+                    XelaButton(theeme_mode: $theeme_mode, action: { withAnimation { monthOffset += 1 }
                         selectedYear = getYearHeader()
                         print(monthOffset)
                         totalOffsets = monthOffset
                         prevMonth = (Int(getMonthHeader(true)) ?? 0)
                         prevYear = Int(getYearHeader()) ?? 0
-                    }, size: .Small, state: $state, type: .Secondary, background: xelaManager.colors.changeMonthButtonBackground, foregroundColor: xelaManager.colors.changeMonthButtonForeground , systemIcon: "chevron.right")
+                    } , size: .Small, state: $state, type: .Secondary, background: xelaManager.colors.changeMonthButtonBackground, foregroundColor: theeme_mode == .lite ? .black : .white , systemIcon: "chevron.right")
                 }
                 .frame(width: xelaManager.cellWidth * CGFloat(daysPerWeek))
                 
@@ -192,7 +210,7 @@ struct XelaMonth: View {
                                 HStack(spacing: 0) {
                                     if self.isThisMonth(date: column) {
                                         XelaDatePickerCell(xelaDate: XelaDate(
-                                            date: column,
+                                            theme_mode: $theeme_mode, date: column,
                                             xelaManager: self.xelaManager,
                                             isDisabled: !self.isEnabled(date: column),
                                             isToday: self.isToday(date: column),
@@ -200,18 +218,18 @@ struct XelaMonth: View {
                                             isBetweenStartAndEnd: self.isBetweenStartAndEnd(date: column),
                                             year: getYearHeader(),
                                             month: getMonthHeader(true)
-                                        ),
+                                        ), theeme_mode: $theeme_mode,
                                                            cellWidth: xelaManager.cellWidth)
                                         .onTapGesture { self.dateTapped(date: column) }
                                     } else {
                                         XelaDatePickerCell(xelaDate: XelaDate(
-                                            date: column,
+                                            theme_mode: $theeme_mode, date: column,
                                             xelaManager: self.xelaManager,
                                             isDisabled: true,
                                             isToday: false,
                                             isSelected: false,
                                             isBetweenStartAndEnd: false
-                                        )
+                                        ), theeme_mode: $theeme_mode
                                         )
                                     }
                                 }
@@ -225,33 +243,29 @@ struct XelaMonth: View {
                 
             }.background(xelaManager.colors.monthBackgroundColor)
             Button(action: {
-                if UserDefaults.standard.value(forKey: "powerLetter") == nil {
+             //   if UserDefaults.standard.value(forKey: "powerLetter") == nil {
                     self.showPicker.toggle()
-                }
+               // }
             }) {
                 HStack {
-                    if UserDefaults.standard.value(forKey: "powerLetter") != nil {
-                        Text("My Power Letter is \(UserDefaults.standard.value(forKey: "powerLetter") as! String)")
+                    Text("\(selectedLetter.format) \(selectedLetter.letter)")
                             .bold()
-                    } else {
-                        Text("\(selectedLetter.format) \(selectedLetter.letter)")
-                            .bold()
-                    }
-                    
+                            .foregroundColor(selected_color)
                 }.padding(10.0)
                     .sheet(isPresented: $showPicker) {
-                        letterPickerView(filter: $selectedLetter)
+                        letterPickerView(theeme_mode: $theeme_mode, filter: $selectedLetter)
                     }
                     .overlay(
                         RoundedRectangle(cornerRadius: 10.0)
                             .stroke(lineWidth: 2.0)
+                            .foregroundColor(selected_color)
                     )
             }.padding(.top, -35)
             
             VStack {
                 Text("Today is Day \(DateTime().letterOfDay())")
                     .font(.system(.title).bold())
-                    .foregroundColor(.black) 
+                    .foregroundColor(themeColor)
                     .colorScheme(.dark) //
             }.padding(.top, -20)
                 .onAppear(perform: {

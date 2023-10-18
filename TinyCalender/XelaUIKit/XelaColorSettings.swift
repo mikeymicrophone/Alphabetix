@@ -16,7 +16,7 @@ struct XelaColorSettings {
     var betweenStartAndEndColor: Color = .init(xelaColor: .Gray3)
     // background colors
     var textBackgroundColor: Color = .clear
-    var todayBackgroundColor: Color = .init(.white)
+    var todayBackgroundColor: Color = .init(.clear) 
     var selectedBackgroundColor: Color = .init(xelaColor: .Blue3)
     var disabledBackgroundColor: Color = .clear
     var betweenStartAndEndBackgroundColor: Color = .init(xelaColor: .Blue8)
@@ -33,3 +33,4 @@ struct XelaColorSettings {
 
     var dividerColor: Color = .init(xelaColor: .Gray9)
 }
+
