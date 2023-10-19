@@ -10,8 +10,8 @@ import SwiftUI
 
 class Letter{
     func getLetter()->LetterModel{
-        let word = Userdefaults().getSavesWord()
-        return   LetterModel(format: "\(word != "+" ? "My " :"")Power Letter", letter: Userdefaults().getSavesWord())
+        let word = Userdefaults().getSavesWord_informat()
+        return   LetterModel(format: "\(word != "+" ? "My " :"")Power Letter", letter: Userdefaults().getSavesWord_informat())
     }
 }
 
@@ -25,6 +25,7 @@ struct letterPickerView: View {
     @State private var selectedLetter = "-"
     @Environment(\.presentationMode) var presentationMode
     @Binding var theeme_mode : Theem_mode
+    @Binding var isPromtMessage : Bool 
     var theem_color : Color{
         return theeme_mode == .dark ? .app_white : .app_Black
     }
@@ -75,7 +76,9 @@ struct letterPickerView: View {
                 if selectedLetter != "-" {
                     Button(action: {
                         UserDefaults.standard.set(selectedLetter, forKey: "powerLetter")
-                        print(UserDefaults.standard.value(forKey: "powerLetter") ?? String.self)
+                        if DateTime().letterOfDay() != Userdefaults().getSavedWord() {
+                            isPromtMessage.toggle()
+                        }
                         filter = LetterModel(format: "My Power Letter is ", letter: selectedLetter)
                         onDismiss?(filter)
                         presentationMode.wrappedValue.dismiss()

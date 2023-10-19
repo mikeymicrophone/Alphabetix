@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "375FB2772962BB0C009F10AC"
-               BuildableName = "TinyCalender.app"
-               BlueprintName = "TinyCalender"
-               ReferencedContainer = "container:TinyCalender.xcodeproj">
+               BuildableName = "Alphabetix.app"
+               BlueprintName = "Alphabetix"
+               ReferencedContainer = "container:Alphabetix.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "375FB2772962BB0C009F10AC"
-            BuildableName = "TinyCalender.app"
-            BlueprintName = "TinyCalender"
-            ReferencedContainer = "container:TinyCalender.xcodeproj">
+            BuildableName = "Alphabetix.app"
+            BlueprintName = "Alphabetix"
+            ReferencedContainer = "container:Alphabetix.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "375FB2772962BB0C009F10AC"
-            BuildableName = "TinyCalender.app"
-            BlueprintName = "TinyCalender"
-            ReferencedContainer = "container:TinyCalender.xcodeproj">
+            BuildableName = "Alphabetix.app"
+            BlueprintName = "Alphabetix"
+            ReferencedContainer = "container:Alphabetix.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

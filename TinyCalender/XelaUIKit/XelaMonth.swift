@@ -25,9 +25,12 @@ struct XelaMonth: View {
     @State private var prevYear: Int = 0
     @State private var yearClicked: Bool = false
     @State private var monthClicked: Bool = false
+    @Binding var isPromtMessage : Bool
+    
     var themeColor : Color{
         return theeme_mode == .dark ? .app_white : .app_Black
     }
+    
     var backGround_color : Color{
         return theeme_mode == .dark ? .app_Black : .app_white
     }
@@ -144,7 +147,7 @@ struct XelaMonth: View {
                                     
                             }.padding(10.0)
                                 .sheet(isPresented: $showPicker) {
-                                    letterPickerView(theeme_mode: $theeme_mode, filter: $selectedLetter)
+                                    letterPickerView(theeme_mode: $theeme_mode, isPromtMessage: $isPromtMessage, filter: $selectedLetter)
                                 }
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10.0)
@@ -155,7 +158,7 @@ struct XelaMonth: View {
                     }.padding(.top, -40)
                         .padding(.bottom, 10)
                 }
-                
+        
                 HStack {
                     Button (action: {
                         yearClicked.toggle()
@@ -253,7 +256,7 @@ struct XelaMonth: View {
                             .foregroundColor(selected_color)
                 }.padding(10.0)
                     .sheet(isPresented: $showPicker) {
-                        letterPickerView(theeme_mode: $theeme_mode, filter: $selectedLetter)
+                        letterPickerView(theeme_mode: $theeme_mode, isPromtMessage: $isPromtMessage, filter: $selectedLetter)
                     }
                     .overlay(
                         RoundedRectangle(cornerRadius: 10.0)

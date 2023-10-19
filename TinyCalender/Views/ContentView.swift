@@ -13,7 +13,8 @@ enum Theem_mode : Int{
 }
 
 struct ContentView: View {
-    @State var theem_mode = Theem_mode.lite
+    
+    @State var theem_mode = Userdefaults().getSavedTheem()
     @State var showPicker = false
     @State var selectedLetter = Letter().getLetter()
     @StateObject var xelaDateManager:XelaDateManager = XelaDateManager(
@@ -25,34 +26,43 @@ struct ContentView: View {
         colors: XelaColorSettings(),
         cellWidth: 50
     )
-    
+    @State var isPromtMessage = false
     var body: some View {
         NavigationView {
-            ZStack {
+            ZStack (alignment: .bottom){
                 if theem_mode == .dark{
                     Color.black.ignoresSafeArea()
                 }else{
                     Color.white.ignoresSafeArea()
-                }           
+                }
                 ScrollView(.vertical){
                     VStack {
-                        XelaDatePicker(theeme_mode: $theem_mode, xelaDateManager: xelaDateManager, monthOffset: ((12 * (Date.getCurrentYear() - 2020)) + Date.getCurrentMonth() - 1 ))
+                        XelaDatePicker(theeme_mode: $theem_mode, xelaDateManager: xelaDateManager, isPromptMessage: $isPromtMessage, monthOffset: ((12 * (Date.getCurrentYear() - 2020)) + Date.getCurrentMonth() - 1 ))
                             .padding(.top, 40)
                     }
                 }
+                if isPromtMessage{
+                    PromptMessage(theeme_mode: $theem_mode, isDisplay: $isPromtMessage)
+                }
             }
             .navigationTitle("Alphabetix")
+            .foregroundColor(.red)
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing:
              Button{
                 withAnimation{
                     theem_mode = theem_mode == .dark ? .lite : .dark
+                    Userdefaults().saveTheme(theem: theem_mode)
+                    
                 }
             }label: {
                 Image( theem_mode == .lite ? "dark" : "lite")
             }
             ).navigationBarBackButtonHidden(true)
             .onAppear {
+                if DateTime().letterOfDay() != Userdefaults().getSavedWord() {
+                    isPromtMessage.toggle()
+                }
                 UIApplication.shared.applicationIconBadgeNumber = 0
                 //UserDefaults.standard.set(0, forKey: "NotificationBadgeCount")
                 NotificationManager.instance.requestAuthorization()
@@ -62,8 +72,8 @@ struct ContentView: View {
 
         // Set the navigation bar title color for both light and dark mode
         .onAppear {
-            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
-            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+         //   UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
+          //  UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         }
         .preferredColorScheme(theem_mode == .lite ? .light : .dark) // Set the preferred color scheme to dark mode
     }

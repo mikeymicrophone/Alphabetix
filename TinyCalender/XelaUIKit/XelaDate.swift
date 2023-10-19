@@ -38,7 +38,8 @@ struct XelaDate {
             textColor = theme_mode == .lite ?  .app_Black : .app_white
         } else if isSelected {
        //     textColor = xelaManager.colors.selectedColor
-            textColor = theme_mode == .lite ? .app_Black : .app_white
+            textColor = theme_mode == .lite ? .app_white : .app_white
+            return textColor
 
         } else if isToday {
             textColor = theme_mode == .lite ? .app_Black : .app_white

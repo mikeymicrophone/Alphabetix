@@ -24,8 +24,15 @@ class Userdefaults{
         }
     }
 
+    func getSavedWord()-> String{
+        if UserDefaults.standard.value(forKey: "powerLetter") != nil{
+            return UserDefaults.standard.value(forKey: "powerLetter") as! String
+        }else{
+            return ""
+        }
+    }
     
-    func getSavesWord()-> String
+    func getSavesWord_informat()-> String
     {
         if UserDefaults.standard.value(forKey: "powerLetter") != nil{
             let word = UserDefaults.standard.value(forKey: "powerLetter") as! String
