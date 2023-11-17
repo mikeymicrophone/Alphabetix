@@ -7,9 +7,9 @@
 
 
 import SwiftUI
-enum Theem_mode : Int{
+enum Theme_mode : Int{
     case dark = 0
-    case lite
+    case light
 }
 
 struct ContentView: View {
@@ -37,12 +37,12 @@ struct ContentView: View {
                 }
                 ScrollView(.vertical){
                     VStack {
-                        XelaDatePicker(theeme_mode: $theem_mode, xelaDateManager: xelaDateManager, isPromptMessage: $isPromtMessage, monthOffset: ((12 * (Date.getCurrentYear() - 2020)) + Date.getCurrentMonth() - 1 ))
+                        XelaDatePicker(theme_mode: $theem_mode, xelaDateManager: xelaDateManager, isPromptMessage: $isPromtMessage, monthOffset: ((12 * (Date.getCurrentYear() - 2020)) + Date.getCurrentMonth() - 1 ))
                             .padding(.top, 40)
                     }
                 }
                 if isPromtMessage{
-                    PromptMessage(theeme_mode: $theem_mode, isDisplay: $isPromtMessage)
+                    PromptMessage(theme_mode: $theem_mode, isDisplay: $isPromtMessage)
                 }
             }
             .navigationTitle("Alphabetix")
@@ -51,12 +51,12 @@ struct ContentView: View {
             .navigationBarItems(trailing:
              Button{
                 withAnimation{
-                    theem_mode = theem_mode == .dark ? .lite : .dark
+                    theem_mode = theem_mode == .dark ? .light : .dark
                     Userdefaults().saveTheme(theem: theem_mode)
                     
                 }
             }label: {
-                Image( theem_mode == .lite ? "dark" : "lite")
+                Image( theem_mode == .light ? "dark" : "lite")
             }
             ).navigationBarBackButtonHidden(true)
             .onAppear {
@@ -75,7 +75,7 @@ struct ContentView: View {
          //   UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
           //  UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         }
-        .preferredColorScheme(theem_mode == .lite ? .light : .dark) // Set the preferred color scheme to dark mode
+        .preferredColorScheme(theem_mode == .light ? .light : .dark) // Set the preferred color scheme to dark mode
     }
 }
 

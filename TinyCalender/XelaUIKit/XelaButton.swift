@@ -11,7 +11,7 @@ import SwiftUI
 struct XelaButton: View {
     // Button text String
     @State var text: String?
-    @Binding var theeme_mode : Theem_mode
+    @Binding var theme_mode : Theme_mode
 
     var action: (() -> Void)? = nil
 
@@ -30,7 +30,7 @@ struct XelaButton: View {
 
     @State var autoResize = true
     var theemColor : Color{
-        return theeme_mode == .lite ? .black : .white
+        return theme_mode == .light ? .black : .white
     }
     var borderLineWidth: CGFloat = 1
     var removePaddings: Bool = false

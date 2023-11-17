@@ -12,7 +12,7 @@ import Foundation
 
 struct XelaMonth: View {
     
-    @Binding var theeme_mode : Theem_mode
+    @Binding var theme_mode : Theme_mode
     @State var showPicker = false
     @State var selectedLetter = Letter().getLetter()
     @State private var selectedYear = ""
@@ -28,15 +28,15 @@ struct XelaMonth: View {
     @Binding var isPromtMessage : Bool
     
     var themeColor : Color{
-        return theeme_mode == .dark ? .app_white : .app_Black
+        return theme_mode == .dark ? .app_white : .app_Black
     }
     
     var backGround_color : Color{
-        return theeme_mode == .dark ? .app_Black : .app_white
+        return theme_mode == .dark ? .app_Black : .app_white
     }
     
     var selected_color : Color{
-        return theeme_mode == .dark ? .app_pink_color : .app_blue
+        return theme_mode == .dark ? .app_pink_color : .app_blue
     }
 
 
@@ -147,7 +147,7 @@ struct XelaMonth: View {
                                     
                             }.padding(10.0)
                                 .sheet(isPresented: $showPicker) {
-                                    letterPickerView(theeme_mode: $theeme_mode, isPromtMessage: $isPromtMessage, filter: $selectedLetter)
+                                    letterPickerView(theme_mode: $theme_mode, isPromtMessage: $isPromtMessage, filter: $selectedLetter)
                                 }
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10.0)
@@ -182,7 +182,7 @@ struct XelaMonth: View {
 
                     })
                     Spacer()
-                    XelaButton(theeme_mode: $theeme_mode, action: {
+                    XelaButton(theme_mode: $theme_mode, action: {
                         withAnimation { monthOffset -= 1 }
                         print(monthOffset)
                         selectedYear = getYearHeader()
@@ -190,13 +190,13 @@ struct XelaMonth: View {
                         prevMonth = (Int(getMonthHeader(true)) ?? 0)
                         prevYear = Int(getYearHeader()) ?? 0
                     }, size: .Small, state: $state , type: .Secondary, background: xelaManager.colors.changeMonthButtonBackground, foregroundColor: Color.red , systemIcon: "chevron.left")
-                    XelaButton(theeme_mode: $theeme_mode, action: { withAnimation { monthOffset += 1 }
+                    XelaButton(theme_mode: $theme_mode, action: { withAnimation { monthOffset += 1 }
                         selectedYear = getYearHeader()
                         print(monthOffset)
                         totalOffsets = monthOffset
                         prevMonth = (Int(getMonthHeader(true)) ?? 0)
                         prevYear = Int(getYearHeader()) ?? 0
-                    } , size: .Small, state: $state, type: .Secondary, background: xelaManager.colors.changeMonthButtonBackground, foregroundColor: theeme_mode == .lite ? .black : .white , systemIcon: "chevron.right")
+                    } , size: .Small, state: $state, type: .Secondary, background: xelaManager.colors.changeMonthButtonBackground, foregroundColor: theme_mode == .light ? .black : .white , systemIcon: "chevron.right")
                 }
                 .frame(width: xelaManager.cellWidth * CGFloat(daysPerWeek))
                 
@@ -213,7 +213,7 @@ struct XelaMonth: View {
                                 HStack(spacing: 0) {
                                     if self.isThisMonth(date: column) {
                                         XelaDatePickerCell(xelaDate: XelaDate(
-                                            theme_mode: $theeme_mode, date: column,
+                                            theme_mode: $theme_mode, date: column,
                                             xelaManager: self.xelaManager,
                                             isDisabled: !self.isEnabled(date: column),
                                             isToday: self.isToday(date: column),
@@ -221,18 +221,18 @@ struct XelaMonth: View {
                                             isBetweenStartAndEnd: self.isBetweenStartAndEnd(date: column),
                                             year: getYearHeader(),
                                             month: getMonthHeader(true)
-                                        ), theeme_mode: $theeme_mode,
+                                        ), theme_mode: $theme_mode,
                                                            cellWidth: xelaManager.cellWidth)
                                         .onTapGesture { self.dateTapped(date: column) }
                                     } else {
                                         XelaDatePickerCell(xelaDate: XelaDate(
-                                            theme_mode: $theeme_mode, date: column,
+                                            theme_mode: $theme_mode, date: column,
                                             xelaManager: self.xelaManager,
                                             isDisabled: true,
                                             isToday: false,
                                             isSelected: false,
                                             isBetweenStartAndEnd: false
-                                        ), theeme_mode: $theeme_mode
+                                        ), theme_mode: $theme_mode
                                         )
                                     }
                                 }
@@ -256,7 +256,7 @@ struct XelaMonth: View {
                             .foregroundColor(selected_color)
                 }.padding(10.0)
                     .sheet(isPresented: $showPicker) {
-                        letterPickerView(theeme_mode: $theeme_mode, isPromtMessage: $isPromtMessage, filter: $selectedLetter)
+                        letterPickerView(theme_mode: $theme_mode, isPromtMessage: $isPromtMessage, filter: $selectedLetter)
                     }
                     .overlay(
                         RoundedRectangle(cornerRadius: 10.0)

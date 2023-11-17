@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct PromptMessage: View {
-    @Binding var theeme_mode : Theem_mode
+    @Binding var theme_mode : Theme_mode
     @Binding var isDisplay : Bool
     var themeColor : Color{
-        return theeme_mode == .dark ? .app_white : .app_Black
+        return theme_mode == .dark ? .app_white : .app_Black
     }
     var backGround_color : Color{
-        return theeme_mode == .dark ? .app_Black : .app_white
+        return theme_mode == .dark ? .app_Black : .app_white
     }
     
     var body: some View {
@@ -40,5 +40,5 @@ struct PromptMessage: View {
 }
 
 #Preview {
-    PromptMessage(theeme_mode: .constant(.dark), isDisplay: .constant(true))
+    PromptMessage(theme_mode: .constant(.dark), isDisplay: .constant(true))
 }

@@ -10,11 +10,11 @@
 import SwiftUI
 
 struct XelaDatePicker: View {
-    @Binding var theeme_mode : Theem_mode
+    @Binding var theme_mode : Theme_mode
     @ObservedObject var xelaDateManager: XelaDateManager
     @Binding var isPromptMessage : Bool
     var monthOffset = 0
     var body: some View {
-        XelaMonth(theeme_mode: $theeme_mode, xelaManager: xelaDateManager, monthOffset: monthOffset, isPromtMessage: $isPromptMessage)
+        XelaMonth(theme_mode: $theme_mode, xelaManager: xelaDateManager, monthOffset: monthOffset, isPromtMessage: $isPromptMessage)
     }
 }

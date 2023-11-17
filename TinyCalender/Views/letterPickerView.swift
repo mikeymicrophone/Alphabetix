@@ -24,14 +24,14 @@ struct letterPickerView: View {
      var letterList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     @State private var selectedLetter = "-"
     @Environment(\.presentationMode) var presentationMode
-    @Binding var theeme_mode : Theem_mode
+    @Binding var theme_mode : Theme_mode
     @Binding var isPromtMessage : Bool 
     var theem_color : Color{
-        return theeme_mode == .dark ? .app_white : .app_Black
+        return theme_mode == .dark ? .app_white : .app_Black
     }
     
     var backGround_color : Color{
-        return theeme_mode == .dark ? .app_Black : .app_white
+        return theme_mode == .dark ? .app_Black : .app_white
     }
 
     var onDismiss: ((_ model: LetterModel) -> Void)?

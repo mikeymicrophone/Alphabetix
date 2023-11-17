@@ -10,15 +10,15 @@ import Foundation
 
 class Userdefaults{
     
-    func saveTheme (theem : Theem_mode ){
+    func saveTheme (theem : Theme_mode ){
         UserDefaults.standard.setValue(theem == .dark ? "dark" : "lite", forKey: "theem")
         UserDefaults.standard.synchronize()
     }
     
-    func getSavedTheem ()-> Theem_mode{
+    func getSavedTheem ()-> Theme_mode{
         if UserDefaults.standard.value(forKey: "theem") != nil{
             let theem = UserDefaults.standard.value(forKey: "theem") as! String
-            return theem == "dark" ? .dark : .lite
+            return theem == "dark" ? .dark : .light
          }else{
             return .dark
         }
