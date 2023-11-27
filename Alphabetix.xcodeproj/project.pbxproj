@@ -61,7 +61,7 @@
 		3769DCA72967EF3C006143F2 /* XelaButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XelaButtonType.swift; sourceTree = "<group>"; };
 		3769DCAB2967EFCE006143F2 /* Colors-Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Colors-Constants.swift"; sourceTree = "<group>"; };
 		37BC1437296BDF23009997F6 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		37BC1440296C00E9009997F6 /* Apphabetix Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apphabetix Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37BC1440296C00E9009997F6 /* Alphabetix Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alphabetix Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BC1442296C00E9009997F6 /* ApphabetixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApphabetixApp.swift; sourceTree = "<group>"; };
 		37BC1444296C00E9009997F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37BC1449296C00EC009997F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		375FB26F2962BB0C009F10AC = {
 			isa = PBXGroup;
 			children = (
-				375FB27A2962BB0C009F10AC /* TinyCalender */,
+				375FB27A2962BB0C009F10AC /* Alphabetix */,
 				37BC1441296C00E9009997F6 /* Apphabetix Watch App */,
 				375FB2792962BB0C009F10AC /* Products */,
 			);
@@ -115,12 +115,12 @@
 			isa = PBXGroup;
 			children = (
 				375FB2782962BB0C009F10AC /* Alphabetix.app */,
-				37BC1440296C00E9009997F6 /* Apphabetix Watch App.app */,
+				37BC1440296C00E9009997F6 /* Alphabetix Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		375FB27A2962BB0C009F10AC /* TinyCalender */ = {
+		375FB27A2962BB0C009F10AC /* Alphabetix */ = {
 			isa = PBXGroup;
 			children = (
 				3769DCA02967E7EF006143F2 /* Views */,
@@ -131,7 +131,7 @@
 				375FB27F2962BB0F009F10AC /* Assets.xcassets */,
 				375FB2812962BB0F009F10AC /* Preview Content */,
 			);
-			path = TinyCalender;
+			path = Alphabetix;
 			sourceTree = "<group>";
 		};
 		375FB2812962BB0F009F10AC /* Preview Content */ = {
@@ -259,9 +259,9 @@
 			productReference = 375FB2782962BB0C009F10AC /* Alphabetix.app */;
 			productType = "com.apple.product-type.application";
 		};
-		37BC143F296C00E9009997F6 /* Apphabetix Watch App */ = {
+		37BC143F296C00E9009997F6 /* Alphabetix Watch App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37BC144D296C00EC009997F6 /* Build configuration list for PBXNativeTarget "Apphabetix Watch App" */;
+			buildConfigurationList = 37BC144D296C00EC009997F6 /* Build configuration list for PBXNativeTarget "Alphabetix Watch App" */;
 			buildPhases = (
 				37BC143C296C00E9009997F6 /* Sources */,
 				37BC143D296C00E9009997F6 /* Frameworks */,
@@ -271,9 +271,9 @@
 			);
 			dependencies = (
 			);
-			name = "Apphabetix Watch App";
+			name = "Alphabetix Watch App";
 			productName = "Apphabetix Watch App";
-			productReference = 37BC1440296C00E9009997F6 /* Apphabetix Watch App.app */;
+			productReference = 37BC1440296C00E9009997F6 /* Alphabetix Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -312,7 +312,7 @@
 			projectRoot = "";
 			targets = (
 				375FB2772962BB0C009F10AC /* Alphabetix */,
-				37BC143F296C00E9009997F6 /* Apphabetix Watch App */,
+				37BC143F296C00E9009997F6 /* Alphabetix Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -510,7 +510,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TinyCalender/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Alphabetix/Preview Content\"";
 				DEVELOPMENT_TEAM = YFW8984WKD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -543,7 +543,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TinyCalender/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Alphabetix/Preview Content\"";
 				DEVELOPMENT_TEAM = YFW8984WKD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -652,7 +652,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37BC144D296C00EC009997F6 /* Build configuration list for PBXNativeTarget "Apphabetix Watch App" */ = {
+		37BC144D296C00EC009997F6 /* Build configuration list for PBXNativeTarget "Alphabetix Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37BC144B296C00EC009997F6 /* Debug */,

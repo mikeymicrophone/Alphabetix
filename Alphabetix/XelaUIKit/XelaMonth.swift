@@ -141,7 +141,7 @@ struct XelaMonth: View {
                             prevYear = Date.getCurrentYear()
                         }) {
                             HStack {
-                                Text("Currrent month")
+                                Text("Back to Now")
                                     .foregroundColor(selected_color)
                                     .bold()
                                     
