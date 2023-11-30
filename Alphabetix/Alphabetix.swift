@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct TinyCalenderApp: App {
+struct Alphabetix: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

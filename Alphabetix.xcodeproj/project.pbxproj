@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		37580CAE2976814F0072173C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37580CAD2976814F0072173C /* GlobalConstant.swift */; };
 		37580CAF2976814F0072173C /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37580CAD2976814F0072173C /* GlobalConstant.swift */; };
-		375FB27C2962BB0C009F10AC /* TinyCalenderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375FB27B2962BB0C009F10AC /* TinyCalenderApp.swift */; };
+		375FB27C2962BB0C009F10AC /* Alphabetix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375FB27B2962BB0C009F10AC /* Alphabetix.swift */; };
 		375FB27E2962BB0C009F10AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375FB27D2962BB0C009F10AC /* ContentView.swift */; };
 		375FB2802962BB0F009F10AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375FB27F2962BB0F009F10AC /* Assets.xcassets */; };
 		375FB2832962BB0F009F10AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375FB2822962BB0F009F10AC /* Preview Assets.xcassets */; };
@@ -49,7 +49,7 @@
 /* Begin PBXFileReference section */
 		37580CAD2976814F0072173C /* GlobalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
 		375FB2782962BB0C009F10AC /* Alphabetix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alphabetix.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		375FB27B2962BB0C009F10AC /* TinyCalenderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyCalenderApp.swift; sourceTree = "<group>"; };
+		375FB27B2962BB0C009F10AC /* Alphabetix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabetix.swift; sourceTree = "<group>"; };
 		375FB27D2962BB0C009F10AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		375FB27F2962BB0F009F10AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		375FB2822962BB0F009F10AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 				37D8483F2966BE01000D692C /* XelaUIKit */,
 				375FB28C296303BD009F10AC /* classes */,
 				375FB28929630333009F10AC /* Extensions */,
-				375FB27B2962BB0C009F10AC /* TinyCalenderApp.swift */,
+				375FB27B2962BB0C009F10AC /* Alphabetix.swift */,
 				375FB27F2962BB0F009F10AC /* Assets.xcassets */,
 				375FB2812962BB0F009F10AC /* Preview Content */,
 			);
@@ -354,7 +354,7 @@
 				37D848512966C213000D692C /* XelaDivider.swift in Sources */,
 				37D8485F2966D3E7000D692C /* XelaDividerOrientation.swift in Sources */,
 				3769DCA92967EF3C006143F2 /* XelaButtonSize.swift in Sources */,
-				375FB27C2962BB0C009F10AC /* TinyCalenderApp.swift in Sources */,
+				375FB27C2962BB0C009F10AC /* Alphabetix.swift in Sources */,
 				37D8485A2966D313000D692C /* XelaColorModel.swift in Sources */,
 				37D848562966C2D5000D692C /* XelaColorSettings.swift in Sources */,
 				B5664CE82ADFB86000CAE544 /* Userdefaults.swift in Sources */,
@@ -508,10 +508,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Alphabetix/Preview Content\"";
-				DEVELOPMENT_TEAM = YFW8984WKD;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Alphabetix;
@@ -525,8 +526,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Zeroit.TinyCalender;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MICharisma.Alphabetix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -541,10 +543,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Alphabetix/Preview Content\"";
-				DEVELOPMENT_TEAM = YFW8984WKD;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Alphabetix;
@@ -558,8 +561,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Zeroit.TinyCalender;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MICharisma.Alphabetix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;

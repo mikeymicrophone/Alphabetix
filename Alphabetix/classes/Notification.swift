@@ -29,8 +29,8 @@ class NotificationManager {
     func scheduleNotification() {
         let content = UNMutableNotificationContent()
         content.title = "AlphabetiX Magicalendar"
-        content.subtitle = "check Today's Letter"
-        content.sound = .default         
+        content.subtitle = "Today is Day \(DateTime().letterOfDay())" 
+        content.sound = .default
         //let badgeCount = UserDefaults.standard.value(forKey: "NotificationBadgeCount") as! Int + 1
         //UserDefaults.standard.set(badgeCount, forKey: "NotificationBadgeCount")
         //content.badge = badgeCount as NSNumber
